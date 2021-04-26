@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+    <div class="formContent">
+        <h2 class="active">Modifier un utilisateur</h2>
+        <div class="fadeIn first">
+        <img src="https://aathifrupay.com/DesignFiles/img/loginpannel.png" id="icon" alt="User Icon" />
+        </div>
+        <div class="formFooter">
+        <div class="col-md-12 user-container">
+            <form [formGroup]="addForm">
+                    
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="libelle">Libelle</label>
+                            <input type="text" class="form-control" placeholder="libelle" formControlName="libelle" name="libelle">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+              </form>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

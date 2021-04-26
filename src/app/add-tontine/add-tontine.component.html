@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+    <div class="formContent">
+        <h2 class="active">Creation d'une nouvelle Tontine</h2>
+        <a routerLink="/mesEpargnes"><i class="fa fa-list" aria-hidden="true"></i>Lister les Tontine</a>
+        <div class="fadeIn first">
+        <img src="https://aathifrupay.com/DesignFiles/img/loginpannel.png" id="icon" alt="User Icon" />
+        </div>
+        <div class="formFooter">
+        <div class="col-md-12 user-container">
+            <form [formGroup]="addForm">
+                    
+                <div class="form-group">
+                    <!--<div class="form-row">-->
+                        <div class="nom">
+                            <label for="nom"><b>Nom de la Tontine</b></label>
+                            <input type="text" class="form-control" placeholder="Le nom de la tontine" formControlName="nom" name="nom">
+                            <h6 style="color: red; font-size:16px">{{errorNom}}</h6>
+                        </div>
+
+                        <div class="session">
+                            <label for="session"><b>La session</b></label>
+                            <input type="text" class="form-control" placeholder="DOnner la session" formControlName="session" name="session">
+                            <h6 style="color: red; font-size:16px">{{errorSession}}</h6>
+                        </div>
+
+                        <div class="dateCre">
+                            <label for="dateCre"><b>Date de debut</b></label>
+                            <input type="date" class="form-control" placeholder="Date de creation" formControlName="dateCre" name="dateCre">
+                            <h6 style="color: red; font-size:16px">{{errordate1}}</h6>
+                        </div>
+
+
+                        <div class="datef">
+                            <label for="datef"><b>Date de FIN</b></label>
+                            <input type="date" class="form-control" placeholder="datef" formControlName="datef" name="datef">
+                            <h6 style="color: red; font-size:16px">{{errordate2}}</h6>
+                            
+                        </div>
+                   <!--</div>-->
+                </div>
+               
+        
+                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block" style="margin-top: 20%;">Enregistrer</button>
+              </form>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+        

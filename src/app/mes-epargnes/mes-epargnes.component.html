@@ -1,0 +1,44 @@
+
+    <div style=" width:70%; margin-left:15%">
+        <h4 style="text-align: center;margin-top:10px">Liste de mes Epargnes Epargne</h4>
+        <div class="tontine">
+            <label for="tontine">Selectionner une tontine</label>
+            <select name="tontine" id="tontine"  [(ngModel)]="tontine" (ngModelChange)="onTontine($event)">
+                <option value="1" selected  disabled>Selectionner un tontine</option>
+                <option value="{{ listTontine.id }}"  *ngFor="let listTontine of listTontine">{{ listTontine.nom }} </option>
+            </select>
+            <h6 style="color: red; font-size:16px">{{erroTontine}}</h6>
+        </div>
+        <div  class="tour">
+            <label for="tour">Selectionner un tour</label>
+            <select name="tour" id="tour" [(ngModel)]="tour" (ngModelChange)="onTour($event)">
+                <option value="Selectionner un tontine" selected  disabled>Selectionner une Tour</option>
+                <option value="{{ ListTourTontine.id }}"  *ngFor="let ListTourTontine of ListTourTontines">{{ ListTourTontine.nom }} </option>
+            </select>
+            <h6 style="color: red; font-size:16px"> {{   errorTour }} </h6>
+        </div>
+        <a routerLink="/epargne" style="margin-left:88%">Nouvelle Epargne<i class="fa fa-plus" aria-hidden="true"></i></a>
+        <table class="table table-hover" style="margin-top: 5%;">
+            <thead>
+            <tr class="table-secondary">
+                <th>NOM tour</th>
+                <th>Montant</th>
+                <th>Interet</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-primary" *ngFor="let ListEpargneT of ListEpargneTour">
+                <td>issa sarr</td>
+                <th>{{ ListEpargneT.montant }}</th>
+                <td>{{ ListEpargneT.interet }}</td>
+                <td>{{ListEpargneT.dateEpargne }}</td>
+            </tr>
+            </tbody>
+           <!-- <button class="btn pagination" (click)="readProfils(pageCurrent - 1)" [disabled]="(pageCurrent==1)">Precedent</button>
+            <button class="btn pagination" (click)="readProfils(pageCurrent + 1)" [disabled]="(pageCurrent==totalPage)">Suivant</button>-->    
+        </table>
+        <button class="btn pagination" (click)="epargne(pageCurrent - 1)" [disabled]="(pageCurrent==1)">Precedent</button>
+    <button class="btn pagination" (click)="epargne(pageCurrent + 1)" [disabled]="(pageCurrent==totalPage)">Suivant</button>
+    </div>
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper fadeInDown">
+    <div class="formContent">
+      <h2 class="active">Authentification</h2>
+      <div class="fadeIn first">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3589PW0RDrBET5JqDmAWmBsy1_qXMVlZucQ&usqp=CAU" id="icon" alt="User Icon" />
+        
+      </div>
+      <span style="color: red; font-size: 20px;"> {{ erreur }} </span>
+      <form>
+        <input type="text" [(ngModel)]="email" class="fadeIn second" name="email" placeholder="Login"><br>
+        <span style="color: red; font-size: 16px;"> {{ erreurEmail }} </span>
+        <input type="password" [(ngModel)]="password" name="password" class="fadeIn third" placeholder="Password"><br>
+        <span style="color: red; font-size: 16px;"> {{ erreurPassword }} </span>
+        <input type="submit" class="fadeIn fourth" value="Connexion" (click)="onSignIn()">
+      </form>
+      <div class="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+    </div>
+  </div>
+</body>

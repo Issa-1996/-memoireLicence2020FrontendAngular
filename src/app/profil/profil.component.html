@@ -1,0 +1,47 @@
+
+    <div class="row col-md-8 ml-3 mt-5">
+        <h1 style="margin-left: 33%;">Liste des Profil</h1>
+        <a routerLink="/addProfil"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        <table class="table table-hover">
+            <thead>
+            <tr class="table-primary">
+                <th scope="col">ID</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="mr-5"  scope="col">Libelle</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let listProfil of listProfils">
+            <tr class="table-active">
+                <td>{{ listProfil.id }}</td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <td>{{ listProfil.libelle }}</td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <td><button class="btn btn-danger" (click)="editProfil(listProfil)" style="margin-left: 20px;">Supprimer</button><button class="btn btn-success" (click)="editProfil(listProfil)" style="margin-left: 20px;">modifier</button></td>
+            </tr>
+            <tr class="table-secondary">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+           <!-- <button class="btn pagination" (click)="readProfils(pageCurrent - 1)" [disabled]="(pageCurrent==1)">Precedent</button>
+            <button class="btn pagination" (click)="readProfils(pageCurrent + 1)" [disabled]="(pageCurrent==totalPage)">Suivant</button>-->    
+        </table>
+    </div>
+<router-outlet></router-outlet>

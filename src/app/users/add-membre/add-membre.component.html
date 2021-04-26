@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+    <div class="formContent">
+        <h2 class="active">Formilaire d'ajout nouveau Membre </h2>
+        <a routerLink="/users"><i class="fa fa-list" aria-hidden="true"></i>Lister Les utilisateurs</a>
+        <div class="fadeIn first">
+        <img src="https://aathifrupay.com/DesignFiles/img/loginpannel.png" id="icon" alt="User Icon" />
+        </div>
+        <div class="formFooter">
+        <div class="col-md-12 user-container">
+            <form [formGroup]="addForm"> 
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="prenom" > <b>Prenom</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre Prenom" formControlName="prenom" name="prenom">
+                            <span style="color: red; font-size: 16px;"> {{ messagePrenom }} </span>
+                        </div>
+                       
+                        <div class="col">
+                            <label for="nom" ><b>Nom</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre Nom" formControlName="nom" name="nom">
+                            <span style="color: red; font-size: 16px;"> {{ messageNom }} </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="telephone" ><b>Telephone</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre numero Telephone" formControlName="telephone" name="telephone">
+                            <span style="color: red; font-size: 16px;"> {{ messageTelephone }} </span>
+                        </div>
+                        <div class="col">
+                            <label for="adresse" ><b>Adresse</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre Adresse" formControlName="adresse" name="adresse">
+                            <span style="color: red; font-size: 16px;"> {{ messageAdresse }} </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="Genre" ><b>Choisie le Genre</b></label>
+                            <select name="Genre" style="border-radius: 20px; height: 60px;" id="Genre" class="form-control" formControlName="Genre">
+                                <option value="Masculin">Masculin</option>
+                                <option value="Feminin">Feminin</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                            <span style="color: red; font-size: 16px;"> {{ messageGenre }} </span>
+                        </div>
+                        <div class="col">
+                            <label for="profil" ><b>Selectionner un Profil</b></label>
+                            <select name="profil" style="border-radius: 20px; height: 60px;" id="profil" class="form-control" formControlName="profil">
+                                <option value="1">ADMINISTRATEUR</option>
+                                <option value="2">TRESORIER</option>
+                                <option value="3">GERANT</option>
+                            </select>
+                            <span style="color: red; font-size: 16px;"> {{ messageProfil }} </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="avatar" ><b>Selectionner un avatar</b></label>
+                            <input type="file" style="border-radius: 20px; height: 60px;" class="form-control" (change)="onUploadAvatar($event)" placeholder="Selectionner un avatar" formControlName="avatar" name="avatar">
+                            <span style="color: red; font-size: 16px;"> {{ messageAvatar }} </span>
+                        </div>
+                        <div class="col">
+                            <label for="tontine" ><b>Tontine</b></label>
+                            <select name="tontine" style="border-radius: 20px; height: 60px;" id="tontine" class="form-control" formControlName="tontine">
+                                <option value="{{ listTontine.id }}"  *ngFor="let listTontine of listTontine">{{ listTontine.nom }} </option>
+                            </select>
+                            <span style="color: red; font-size: 16px;"> {{ messageTontine }} </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="cni" ><b>CNI</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre cni" formControlName="cni" name="cni">
+                            <span style="color: red; font-size: 16px;"> {{ messageCni }} </span>
+                        </div>
+                        <div class="col">
+                            <label for="roles" ></label><b>Choisi un Roles</b>
+                            <select name="roles" style="border-radius: 20px; height: 60px;" id="roles" class="form-control" formControlName="roles">
+                                <option value="ROLE_ADMIN">ADMINISTRATEUR</option>
+                                <option value="ROLE_GERANT">GERANT</option>
+                                <option value="ROLE_TRESORIER">TRESORIER</option>
+                                <option value="ROLE_MEMBRE">MEMBRE</option>
+                            </select>
+                            <span style="color: red; font-size: 16px;"> {{ messageRoles }} </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="email" ><b>Email</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre email" formControlName="email" name="email">
+                            <span style="color: red; font-size: 16px;"> {{ messageEmail }} </span>
+                        </div>
+                        <div class="col">
+                            <label for="password"><b>Password</b></label>
+                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre password" formControlName="password" name="password">
+                            <span style="color: red; font-size: 16px;"> {{ messagePassword }} </span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+              </form>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

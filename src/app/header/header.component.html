@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="isLoggedIn=='true'" style="height: 120px;">
+    <div class="icone">
+      <i class="fas fa-phone-volume" style="margin-right: 0.5%; color: white;"></i>
+      <i style="margin-right: 2%; color: white;">+221 77 945 56 66</i>
+      <i class="far fa-envelope" style="margin-right: 2%; color: white;"></i>
+      <i class="fab fa-facebook-f"  style="margin-right: 2%; color: white;"></i>
+      <i class="fab fa-twitter" style="margin-right: 2%; color: white;"></i>
+      <i class="fab fa-instagram" style="margin-right: 2%; color: white;"></i>
+      <i class="fab fa-linkedin-in" style="margin-right: 2%; color: white;"></i>
+    </div>
+      <div class="collapse navbar-collapse mt-5" id="navbarColor01">
+        <img src="../assets/log.jpeg" class="logo">
+        <ul class="navbar-nav mr-auto" style="width: 55%;height: 50px; font-size: 36px;">
+          <li class="nav-item" routerActive="active"><a class="nav-link" routerLink="/home"><b>Accueil</b> </a></li>
+          <li class="nav-item dropdown" routerActive="active">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isProfil=='false'"><b>Parametre</b></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/profil">Profil</a>
+              <a class="dropdown-item" routerLink="/tour">Tour</a>
+              <a class="dropdown-item" routerLink="/users">Espace Membres</a>
+              <a class="dropdown-item" routerLink="/tontine">Tontine</a>
+              <a class="dropdown-item" routerLink="/mesEpargnes">Epargnes</a>
+            </div>
+          </li>
+          <!--<li class="nav-item" routerActive="active"><a class="nav-link" routerLink="users">Users</a></li>-->
+    
+          <!--<li class="nav-item dropdown" routerActive="active">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Users</b></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/users">Utilisateurs</a>
+              <a class="dropdown-item" routerLink="/profil">Profil</a>
+            </div>
+          </li>-->
+          <li class="nav-item" routerActive="active"><a class="nav-link" routerLink="/epargne"><b>A propos</b> </a></li>
+          <li class="nav-item" routerActive="active"><a class="nav-link" routerLink="/users"><b>Contacts</b> </a></li>
+        </ul>
+
+        <marquee direction="down" style="text-align: center;" height="50"><h4 style="color: white;margin-right: 30%;"><i> Bienvenue a la Tontine Calebasse </i></h4></marquee>
+
+        <!--<form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="deconnecter()" style="background-color: mediumspringgreen; width: 100%; height: 50px;font-size: 26px;" >Deconnexion</button>
+        </form>-->
+
+        <ul class="navbar-nav mr-auto" style="width: 20%;">
+          
+          <li class="nav-item dropdown" routerActive="active">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="data:image/png;base64,{{ avatar }}" class="profil">{{ prenom }} {{ nom }}</a>
+            <div class="dropdown-menu">
+              <h6 style="text-align: center;">Mon Profil</h6>
+              <img src="data:image/png;base64,{{ avatar }}" width="20%" class="avatar">
+              <h6 style="text-align: center; font-size: 20px; margin-top: 90%;"> {{ prenom }} {{ nom }} </h6>
+              <button  (click)="deconnecter()" class="deconnexion" style="margin-left: 10%; margin-top: 10%; border: 2px solid red; font-size: 20px; color: white;">Deconnexion</button>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    

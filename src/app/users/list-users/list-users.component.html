@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+    <img src="data:image/png;base64,{{list.avatar}}" class="card-img-top" alt="..." width="50" height="120">
+    <div class="card-body">
+      <p><b> Prenom </b>: {{ list.prenom }}</p>
+      <p><b> Nom </b>: {{ list.nom }}</p>
+      <p> <b> Profil</b>: {{ list.profil.libelle }}</p>
+      <button class="badge badge-pill badge-secondary" (click)="deleteUser(list)" style="float: left; width: 50%;">Supprimer</button>
+      <button class="badge badge-pill badge-primary" (click)="editUser(list)" style="float: right; width: 50%;">Modifier</button>
+    </div>
+  </div>

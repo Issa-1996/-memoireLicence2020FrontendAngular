@@ -1,0 +1,35 @@
+.pagination{
+    background-color: gray;
+    display: inline-block;
+    position: relative;
+    color: white;
+    left: 80%;
+    width: 10%;
+}
+.tontine{
+    width: 30%;
+    height: 50px;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top: 23%;
+}
+.tontine select{
+    width: 50%;
+    height: 80%;
+    border-radius: 10px;
+}
+.tour{
+    width: 30%;
+    height: 50px;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    left: 60%;
+    top: 23%;
+}
+.tour select{
+    width: 50%;
+    height: 80%;
+    border-radius: 10px;
+}
