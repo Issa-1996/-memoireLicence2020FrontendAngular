@@ -4,6 +4,16 @@
     position: relative;
     color: white;
     left: 80%;
+    top: -3%;
     width: 10%;
     border-radius: 20px;
+}
+.header{
+    background-color: blue;
+    width: 48%;
+    height: 9%;
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    color: white;
 }

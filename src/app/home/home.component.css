@@ -12,6 +12,9 @@
     font-size: 50px;
     color: white;
 }
+#carouselExampleControls{
+    margin-top: -1.1%;
+}
 .jumbotron img{
     position: absolute;
     left: 20%;

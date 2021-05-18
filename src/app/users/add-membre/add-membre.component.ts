@@ -32,6 +32,7 @@ export class AddMembreComponent implements OnInit {
   public messageRoles="";
   public messageEmail="";
   public messagePassword="";
+  erreur = '';
   constructor(private formBuilder: FormBuilder, private apiService: MethodeService, private router: Router) { }
 
   ngOnInit() {
@@ -50,10 +51,45 @@ export class AddMembreComponent implements OnInit {
       avatar: ['', Validators.required],
       tontine: ['', Validators.required]
     });
-
+    this.addForm.get('prenom').valueChanges.subscribe(
+      () => { this.messagePrenom = ''; this.erreur = ''; }
+    );
+    this.addForm.get('nom').valueChanges.subscribe(
+      () => { this.messageNom = ''; this.erreur = ''; }
+    );
+    this.addForm.get('telephone').valueChanges.subscribe(
+      () => { this.messageTelephone = ''; this.erreur = ''; }
+    );
+    this.addForm.get('adresse').valueChanges.subscribe(
+      () => { this.messageAdresse = ''; this.erreur = ''; }
+    );
+    this.addForm.get('Genre').valueChanges.subscribe(
+      () => { this.messageGenre = ''; this.erreur = ''; }
+    );
+    this.addForm.get('profil').valueChanges.subscribe(
+      () => { this.messageProfil = ''; this.erreur = ''; }
+    );
+    this.addForm.get('avatar').valueChanges.subscribe(
+      () => { this.messageAvatar = ''; this.erreur = ''; }
+    );
+    this.addForm.get('tontine').valueChanges.subscribe(
+      () => { this.messageTontine = ''; this.erreur = ''; }
+    );
+    this.addForm.get('cni').valueChanges.subscribe(
+      () => { this.messageCni = ''; this.erreur = ''; }
+    );
+    this.addForm.get('roles').valueChanges.subscribe(
+      () => { this.messageRoles = ''; this.erreur = ''; }
+    );
+    this.addForm.get('email').valueChanges.subscribe(
+      () => { this.messageEmail = ''; this.erreur = ''; }
+    );
+    this.addForm.get('password').valueChanges.subscribe(
+      () => { this.messagePassword = ''; this.erreur = ''; }
+    );
   }
   onSubmit() {
-    if(this.addForm.value.prenom.length<=0){
+    /*if(this.addForm.value.prenom.length<=0){
       this.messagePrenom="Prenom Obligatoire";
     }else{
       this.messagePrenom="";
@@ -129,15 +165,58 @@ export class AddMembreComponent implements OnInit {
             }
           }
         }
+      }*/
+      if (this.addForm.get('prenom').value.trim() === ''){
+        this.messagePrenom = 'Prenom obligatoire !';
       }
-    }
-    //console.log(this.addForm.value);
-  
+      if (this.addForm.get('nom').value.trim() === ''){
+        this.messageNom = 'Nom obligatoire !';
+      }
+      if (this.addForm.get('telephone').value.trim() === ''){
+        this.messageTelephone = 'Numero de telephone obligatoire !';
+      }
+      if (this.addForm.get('adresse').value.trim() === ''){
+        this.messageAdresse = 'Adresse obligatoire !';
+      }
+      if (this.addForm.get('Genre').invalid){
+        this.messageGenre = 'Genre incorrect !';
+      }
+      if (this.addForm.get('profil').value.trim() === ''){
+        this.messageProfil = 'Profil obligatoire !';
+      }
+      if (this.addForm.get('avatar').value.trim() === ''){
+        this.messageAvatar = 'Choisir un avatar !';
+      }
+      if (this.addForm.get('tontine').value.trim() === ''){
+        this.messageTontine = 'Date de naissance obligatoire !';
+      }
+      if (this.addForm.get('cni').value.trim() === ''){
+        this.messageCni = 'CNI obligatoire !';
+      }
+      if (this.addForm.get('roles').value.trim() === ''){
+        this.messageRoles = 'Roles obligatoire !';
+      }
+      if (this.addForm.get('email').value.trim() === ''){
+        this.messageEmail = 'Email obligatoire';
+      }
+      if (this.addForm.get('password').value.trim() === ''){
+        this.messagePassword = 'Mot de passe obligatoire !';
+      }
+      if (this.addForm.invalid){
+        return;
+      }
+      this.apiService.addUser(this.addForm.value)
+        .subscribe( data => {
+          console.log(data);
+          this.router.navigate(['/users']);
+        });
+              //this.subscribe(this.addForm.value);
   }
+      //console.log(this.addForm.value);
+  
   onUploadAvatar=(event:any)=>{
     this.avatar=event.target.files[0]
   }
-
   Tontine(page:any) {
     this.pageCurrent=page;
     return this.apiService.readTontine(this.pageCurrent)

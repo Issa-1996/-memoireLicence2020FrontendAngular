@@ -14,10 +14,10 @@
         
       </div>
       <span style="color: red; font-size: 20px;"> {{ erreur }} </span>
-      <form>
-        <input type="text" [(ngModel)]="email" class="fadeIn second" name="email" placeholder="Login"><br>
+      <form [formGroup]="addForm">
+        <input type="text" formControlName="login" class="fadeIn second" name="login" placeholder="Login"><br>
         <span style="color: red; font-size: 16px;"> {{ erreurEmail }} </span>
-        <input type="password" [(ngModel)]="password" name="password" class="fadeIn third" placeholder="Password"><br>
+        <input type="password" formControlName="password" name="password" class="fadeIn third" placeholder="Password"><br>
         <span style="color: red; font-size: 16px;"> {{ erreurPassword }} </span>
         <input type="submit" class="fadeIn fourth" value="Connexion" (click)="onSignIn()">
       </form>

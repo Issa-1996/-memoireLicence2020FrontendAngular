@@ -17,39 +17,39 @@
         <div class="col-md-12 user-container">
             <form [formGroup]="addForm"> 
                 <div class="form-group">
-                    <div class="form-row">
+                    <div class="form-row ml-5 ">
                         <div class="col">
                             <label for="prenom" > <b>Prenom</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre Prenom" formControlName="prenom" name="prenom">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre Prenom" formControlName="prenom" name="prenom">
                             <span style="color: red; font-size: 16px;"> {{ messagePrenom }} </span>
                         </div>
                        
                         <div class="col">
                             <label for="nom" ><b>Nom</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre Nom" formControlName="nom" name="nom">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre Nom" formControlName="nom" name="nom">
                             <span style="color: red; font-size: 16px;"> {{ messageNom }} </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-row">
+                    <div class="form-row ml-5">
                         <div class="col">
                             <label for="telephone" ><b>Telephone</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre numero Telephone" formControlName="telephone" name="telephone">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre numero Telephone" formControlName="telephone" name="telephone">
                             <span style="color: red; font-size: 16px;"> {{ messageTelephone }} </span>
                         </div>
                         <div class="col">
                             <label for="adresse" ><b>Adresse</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre Adresse" formControlName="adresse" name="adresse">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre Adresse" formControlName="adresse" name="adresse">
                             <span style="color: red; font-size: 16px;"> {{ messageAdresse }} </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-row">
+                    <div class="form-row ml-5">
                         <div class="col">
                             <label for="Genre" ><b>Choisie le Genre</b></label>
-                            <select name="Genre" style="border-radius: 20px; height: 60px;" id="Genre" class="form-control" formControlName="Genre">
+                            <select name="Genre" style="border-radius: 10px; height: 45px; width: 90%;" id="Genre" class="form-control" formControlName="Genre">
                                 <option value="Masculin">Masculin</option>
                                 <option value="Feminin">Feminin</option>
                                 <option value="Autre">Autre</option>
@@ -58,25 +58,25 @@
                         </div>
                         <div class="col">
                             <label for="profil" ><b>Selectionner un Profil</b></label>
-                            <select name="profil" style="border-radius: 20px; height: 60px;" id="profil" class="form-control" formControlName="profil">
-                                <option value="1">ADMINISTRATEUR</option>
-                                <option value="2">TRESORIER</option>
-                                <option value="3">GERANT</option>
+                            <select name="profil" style="border-radius: 10px; height: 45px; width: 90%;" id="profil" class="form-control" formControlName="profil">
+                                <option value="user">ADMINISTRATEUR</option>
+                                <option value="tresorier">TRESORIER</option>
+                                <option value="gerant">GERANT</option>
                             </select>
                             <span style="color: red; font-size: 16px;"> {{ messageProfil }} </span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-row">
+                    <div class="form-row ml-5">
                         <div class="col">
                             <label for="avatar" ><b>Selectionner un avatar</b></label>
-                            <input type="file" style="border-radius: 20px; height: 60px;" class="form-control" (change)="onUploadAvatar($event)" placeholder="Selectionner un avatar" formControlName="avatar" name="avatar">
+                            <input type="file" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" (change)="onUploadAvatar($event)" placeholder="Selectionner un avatar" formControlName="avatar" name="avatar">
                             <span style="color: red; font-size: 16px;"> {{ messageAvatar }} </span>
                         </div>
                         <div class="col">
                             <label for="tontine" ><b>Tontine</b></label>
-                            <select name="tontine" style="border-radius: 20px; height: 60px;" id="tontine" class="form-control" formControlName="tontine">
+                            <select name="tontine" style="border-radius: 10px; height: 45px; width: 90%;" id="tontine" class="form-control" formControlName="tontine">
                                 <option value="{{ listTontine.id }}"  *ngFor="let listTontine of listTontine">{{ listTontine.nom }} </option>
                             </select>
                             <span style="color: red; font-size: 16px;"> {{ messageTontine }} </span>
@@ -85,15 +85,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-row">
+                    <div class="form-row ml-5">
                         <div class="col">
                             <label for="cni" ><b>CNI</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre cni" formControlName="cni" name="cni">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre cni" formControlName="cni" name="cni">
                             <span style="color: red; font-size: 16px;"> {{ messageCni }} </span>
                         </div>
                         <div class="col">
                             <label for="roles" ></label><b>Choisi un Roles</b>
-                            <select name="roles" style="border-radius: 20px; height: 60px;" id="roles" class="form-control" formControlName="roles">
+                            <select name="roles" style="border-radius: 10px; height: 45px; width: 90%;" id="roles" class="form-control" formControlName="roles">
                                 <option value="ROLE_ADMIN">ADMINISTRATEUR</option>
                                 <option value="ROLE_GERANT">GERANT</option>
                                 <option value="ROLE_TRESORIER">TRESORIER</option>
@@ -104,20 +104,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-row">
+                    <div class="form-row ml-5">
                         <div class="col">
                             <label for="email" ><b>Email</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre email" formControlName="email" name="email">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre email" formControlName="email" name="email">
                             <span style="color: red; font-size: 16px;"> {{ messageEmail }} </span>
                         </div>
                         <div class="col">
                             <label for="password"><b>Password</b></label>
-                            <input type="text" style="border-radius: 20px; height: 60px;" class="form-control" placeholder="Donner votre password" formControlName="password" name="password">
+                            <input type="text" style="border-radius: 10px; height: 45px; width: 90%;" class="form-control" placeholder="Donner votre password" formControlName="password" name="password">
                             <span style="color: red; font-size: 16px;"> {{ messagePassword }} </span>
                         </div>
                     </div>
                 </div>
-                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+                <button type="button" (click)="onSubmit()" class="btn btn-primary">Inscription</button>
               </form>
         </div>
     </div>

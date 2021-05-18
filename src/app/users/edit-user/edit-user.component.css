@@ -4,10 +4,8 @@
 
 html {
   background-color: #56baed;
+  height: 0%;
 }
-
-
-
 a {
   color: #92badd;
   display:inline-block;
@@ -30,11 +28,10 @@ h2 {
 .wrapper {
   display: flex;
   align-items: center;
-  flex-direction: column; 
-  justify-content: center;
+  
+  
   width: 100%;
-  min-height: 100%;
-  padding: 20px;
+  
 }
 #icon{
     width: 10%;
@@ -45,13 +42,13 @@ h2 {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
-  padding: 30px;
+  
   width: 28%;
-  max-width: 1000px;
+  
   position: absolute;
-  left:72%;
-  top: 21%;
-  padding: 0px;
+  left:70%;
+  top: 1%;
+  
   -webkit-box-shadow: 60px 30px 60px 60px rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;

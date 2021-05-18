@@ -1,10 +1,29 @@
-<div class="card" style="width: 18rem;">
-    <img src="data:image/png;base64,{{list.avatar}}" class="card-img-top" alt="..." width="50" height="120">
+<div class="card " style="width: 28rem;">
+    <img src="data:image/png;base64,{{list.avatar}}" class="card-img-top" alt="..." width="50" height="150">
     <div class="card-body">
       <p><b> Prenom </b>: {{ list.prenom }}</p>
       <p><b> Nom </b>: {{ list.nom }}</p>
       <p> <b> Profil</b>: {{ list.profil.libelle }}</p>
-      <button class="badge badge-pill badge-secondary" (click)="deleteUser(list)" style="float: left; width: 50%;">Supprimer</button>
-      <button class="badge badge-pill badge-primary" (click)="editUser(list)" style="float: right; width: 50%;">Modifier</button>
+      <button data-toggle="modal" data-target="#exampleModal" class="badge badge-pill badge-secondary"  style="float: left; width: 50%; background-color: tomato;">Supprimer</button>
+      <button class="badge badge-pill badge-primary" (click)="editUser(list)" style="float: right; width: 50%; background-color: yellowgreen;">Modifier</button>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" id="conf">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Confirmation de suppression</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Voullez-vous vraiment supprimer <i class="fas fa-user-minus"></i>?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary" (click)="deleteUser(list)">Confirmer</button>
+        </div>
+      </div>
     </div>
   </div>

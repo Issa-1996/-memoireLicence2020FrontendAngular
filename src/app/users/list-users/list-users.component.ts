@@ -12,16 +12,23 @@ import { Router } from '@angular/router';
 export class ListUsersComponent implements OnInit {
 
   @Input() list: User;
+  conf='false';
   constructor(private apiService: MethodeService,private methodeService: MethodeService,  private router: Router) { }
 
   ngOnInit(): void {
       //console.log(this.list);
+      this.onConfirm();
       
+  }
+  onConfirm(){
+    //alert("dfhgjkjl")
+    this.conf='true';
+    //console.log("test");
   }
   editUser(user: User): void {
     localStorage.removeItem("editUserId");
     localStorage.setItem("id", user.id.toString());
-    console.log(user.id.toString());
+    //console.log(user.id.toString());
     this.router.navigate(['/users/editUser']);
   }
   deleteUser(user: User): void {
@@ -30,7 +37,7 @@ export class ListUsersComponent implements OnInit {
    // console.log(user.id.toString());
     this.apiService.deleteUserId(user.id.toString())
       .subscribe( data => {
-        console.log("succes");
+        //console.log("succes");
         this.router.navigate(['/home']);
       }); 
   }

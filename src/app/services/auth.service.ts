@@ -44,7 +44,7 @@ export class AuthService {
     
     const body='{"email":"'+ email +'","password":"'+ password+ '"}';        
     const header=new HttpHeaders({'Content-Type':'application/json'});  
-    return this.http.post("https://127.0.0.1:8000/api/login",body,{headers:header});
+    return this.http.post("http://127.0.0.1:8000/api/login",body,{headers:header});
   }
   /**
    * Deconnexion de l'utilisateur, cette methode est appeler dans auth.component.ts
@@ -54,7 +54,7 @@ export class AuthService {
     localStorage.removeItem('token');  
   }
   userConnect():Observable<User[]>{
-    return this.http.get<User[]>('https://127.0.0.1:8000/api/admin/currentUser', this.httpOptions);
+    return this.http.get<User[]>('http://127.0.0.1:8000/api/admin/currentUser', this.httpOptions);
   }
 
 }

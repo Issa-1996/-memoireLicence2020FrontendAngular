@@ -10,17 +10,24 @@
 a {
     font-size: 20px;
 }
+#navbarColor01{
+    margin-top: 4%;
+}
 .logo{
-    width : 90px; 
-    height : 85px;
+    width : 5%; 
+    height : 80px;
     border: none;
-    -moz-border-radius : 10px;
-    -webkit-border-radius : 10px;
-    border-radius : 10px;
-     margin-top: -1%;
-    -webkit-border-radius:27px;
-    -moz-border-radius:27px;
-    margin-left: -0.7%;
+    -moz-border-radius : 8px;
+    -webkit-border-radius:35px;
+    -moz-border-radius:35px;
+    margin-top: 2%;
+}/*
+.marquee{
+    position: absolute;
+    left: 50%;
+}*/
+#profil{
+    float: right;
 }
 .profil{
     width:10%; 

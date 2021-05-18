@@ -19,8 +19,7 @@ import { AddTontineComponent } from './add-tontine/add-tontine.component';
 
 const routes: Routes = [
     { path: '', component: AuthComponent },
-    { path: 'home', component: HomeComponent,canActivate: [AuthGuardGuard]
-    },
+    { path: 'home', component: HomeComponent,canActivate: [AuthGuardGuard]},
     { path: 'users', component: UsersComponent, canActivate: [AuthGuardGuard], 
     children:[
       {path: 'editUser', component: EditUserComponent, canActivate: [AuthGuardGuard]},
