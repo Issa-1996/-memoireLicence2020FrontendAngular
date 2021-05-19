@@ -39,13 +39,15 @@ export class MethodeService {
 /**
  * Route profil
  */
- readAllProfil(page: any): Observable<Profil[]> {
-  return this.httpClient.get<Profil[]>('http://127.0.0.1:8000/api/admin/profils?_page='+page, {headers: {'Content-Type': 'application/json'}});
+ readAllProfil(): Observable<Profil[]> {
+  return this.httpClient.get<Profil[]>('http://127.0.0.1:8000/api/admin/profils', {headers: {'Content-Type': 'application/json'}});
 }
 addProfil(profil: any): Observable<Profil> {
   return this.httpClient.post<Profil>('http://127.0.0.1:8000/api/admin/profils', profil, {headers:this.headers});
 }
-
+deleteProfilId(userFormData: any): Observable<Profil> {
+  return this.httpClient.delete<Profil>('http://127.0.0.1:8000/api/admin/profils'+'/' +  userFormData, {headers:this.headers});
+}
 updateProfil(profil: any): Observable<Profil> {
   return this.httpClient.put<Profil>('http://127.0.0.1:8000/api/admin/profils'+'/' + profil.id, profil, {headers:this.headers});
 }

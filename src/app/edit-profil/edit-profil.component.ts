@@ -17,7 +17,7 @@ export class EditProfilComponent implements OnInit {
     let profilId = window.localStorage.getItem("id");
     if(!profilId) {
       alert("Invalid action.")
-      this.router.navigate(['/home']);
+      this.router.navigate(['/admin/home']);
       return;
     }
     this.addForm = this.formBuilder.group({
@@ -37,7 +37,7 @@ export class EditProfilComponent implements OnInit {
     this.apiService.updateProfil(this.addForm.value)
     .subscribe( data => {
       console.log("success");
-      this.router.navigate(['/profil']);
+      this.router.navigate(['/admin/profil']);
     });    
   }
 

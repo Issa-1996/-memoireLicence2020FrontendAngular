@@ -18,11 +18,11 @@
                     
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col mb-3">
                             <label for="prenom">Prenom</label>
                             <input type="text" class="form-control" placeholder="prenom" formControlName="prenom" name="prenom">
                         </div>
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="nom">Nom</label>
                             <input type="text" class="form-control" placeholder="nom" formControlName="nom" name="nom">
                         </div>
@@ -31,11 +31,11 @@
 
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="telephone">Telephone</label>
                             <input type="text" class="form-control" placeholder="telephone" formControlName="telephone" name="telephone">
                         </div>
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="adresse">Adresse</label>
                             <input type="text" class="form-control" placeholder="adresse" formControlName="adresse" name="adresse">
                         </div>
@@ -44,21 +44,20 @@
 
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="genre">Genre</label>
-                            <select name="genre" id="genre" class="form-control" formControlName="genre">
+                            <select name="genre" id="genre" class="form-control" formControlName="genre" style="height:85%">
                                 <option value="Masculin">Masculin</option>
                                 <option value="Feminin">Feminin</option>
                                 <option value="Autre">Autre</option>
                             </select>
                         </div>
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="profil">Profil</label>
-                            <select name="profil" id="profil" class="form-control" formControlName="profil">
-                                <option value="apprenant">Apprenant</option>
-                                <option value="formateur">Formateur</option>
-                                <option value="admin">Admin</option>
-                                <option value="cm">CM</option>
+                            <select name="profil" id="profil" class="form-control" formControlName="profil" style="height:85%">
+                                <option value="1">User</option>
+                                <option value="2">Gerant</option>
+                                <option value="3">Tresorier</option>
                             </select>
                         </div>
                     </div>
@@ -66,11 +65,11 @@
 
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" placeholder="email" formControlName="email" name="email">
                         </div>
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="password">Password</label>
                             <input type="text" class="form-control" placeholder="password" formControlName="password" name="password">
                         </div>
@@ -79,17 +78,17 @@
 
                 <div class="form-group">
                     <div class="form-row">
-                       <div class="col">
+                       <div class="col mb-4">
                             <label for="telephone">Avatar</label>
                             <input type="file" class="form-control" (change)="onUploadAvatar($event)" placeholder="avatar" formControlName="avatar" name="avatar">
                         </div>
-                        <div class="col">
+                        <div class="col mb-4">
                             <label for="role">Role</label>
-                            <select name="role" id="role" class="form-control" formControlName="role">
-                                <option value="apprenant">Apprenant</option>
-                                <option value="formateur">Formateur</option>
-                                <option value="user">User</option>
-                                <option value="cm">CM</option>
+                            <select name="role" id="role" class="form-control" formControlName="role" style="height:85%">
+                                <option value="['ROLE_MEMBRE']">Membre simple</option>
+                                <option value="['ROLE_ADMIN']">Administrateur</option>
+                                <option value="['ROLE_GERANT']">Gerant</option>
+                                <option value="['ROLE_TRESORIER']">Tresorier</option>
                             </select>
                         </div>
 
@@ -97,7 +96,7 @@
                 </div>
 
 
-                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+                <button type="button" (click)="onSubmit()" class="btn btn-primary">Modifier</button>
               </form>
         </div>
     </div>

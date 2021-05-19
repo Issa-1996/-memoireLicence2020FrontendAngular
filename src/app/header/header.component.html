@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" *ngIf="isLoggedIn=='true'" style="height: 120px;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="height: 120px;">
     <div class="icone">
       <i class="fas fa-phone-volume" style="margin-right: 0.5%; color: white;"></i>
       <i style="margin-right: 2%; color: white;">+221 77 945 56 66</i>
@@ -13,15 +13,15 @@
      <div class="collapse navbar-collapse" id="navbarColor01">
         
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item" routerActive="active"><a class="nav-link" routerLink="/home"><b>Accueil</b> </a></li>
+          <li class="nav-item" routerActive="active"><a class="nav-link" routerLink="//admin/home"><b>Accueil</b> </a></li>
           <li class="nav-item dropdown" routerActive="active">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isProfil=='false'"><b>Parametre</b></a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink="/profil">Profil</a>
-              <a class="dropdown-item" routerLink="/tour">Tour</a>
-              <a class="dropdown-item" routerLink="/users">Espace Membres</a>
-              <a class="dropdown-item" routerLink="/tontine">Tontine</a>
-              <a class="dropdown-item" routerLink="/mesEpargnes">Epargnes</a>
+              <a class="dropdown-item" routerLink="/admin/profil">Profil</a>
+              <a class="dropdown-item" routerLink="/admin/tour">Tour</a>
+              <a class="dropdown-item" routerLink="/admin/users">Espace Membres</a>
+              <a class="dropdown-item" routerLink="/admin/tontine">Tontine</a>
+              <a class="dropdown-item" routerLink="/admin/mesEpargnes">Epargnes</a>
             </div>
           </li>
           <!--<li class="nav-item" routerActive="active"><a class="nav-link" routerLink="users">Users</a></li>-->
@@ -29,8 +29,8 @@
           <li class="nav-item dropdown" routerActive="active">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Users</b></a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink="/users">Utilisateurs</a>
-              <a class="dropdown-item" routerLink="/profil">Profil</a>
+              <a class="dropdown-item" routerLink="/admin/users">Utilisateurs</a>
+              <a class="dropdown-item" routerLink="/admin/profil">Profil</a>
             </div>
           </li>
         </ul>

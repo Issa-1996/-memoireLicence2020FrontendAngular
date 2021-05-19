@@ -1,20 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* BASIC */
 
 html {
   background-color: #56baed;
   height: 50%;
 }
-
-
 a {
-  color: #92badd;
+  color: dodgerblue;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
+  font-size: 20px;
 }
-
 h2 {
   text-align: center;
   font-size: 16px;
@@ -24,21 +20,18 @@ h2 {
   margin: 40px 8px 10px 8px; 
   color: #cccccc;
 }
-
 /* STRUCTURE */
-
 .wrapper {
   display: flex;
   justify-content: center;
   width: 70%;
   margin-left: 15%;
-  margin-top: -7%;
+  margin-top: -7.5%;
 }
 #icon{
     width: 10%;
     height: 55px;
 }
-
 .formContent {
   background-color: white;
   border-radius: 10px;
@@ -47,7 +40,6 @@ h2 {
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
 }
-
 .formFooter {
   background-color: #f6f6f6;
   border-top: 1px solid #dce8f1;
@@ -55,21 +47,23 @@ h2 {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-
-/* TABS */
-
 h2.inactive {
   color: #cccccc;
 }
-
 h2.active {
   color: #0d0d0d;
   border-bottom: 2px solid #5fbae9;
 }
 button{
   background-color: blue;
-  margin-top: 2%;
+  margin-top: 1%;
   height: 45px;
   width: 60%;
   font-size: 26px;
+}
+input{
+  border-color: dodgerblue;
+}
+select{
+  border-color: dodgerblue;
 }

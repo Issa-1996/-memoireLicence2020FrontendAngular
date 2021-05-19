@@ -59,7 +59,7 @@ export class AuthComponent implements OnInit {
             console.log(data);
             this.token=this.token.token;
             localStorage.setItem('token', this.token);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/']);
          // const roles: string[] = decodedToken.roles;
           ///if (roles.includes('ROLE_ETUDIANT')) {
            // this.router.navigate(['/liste']);

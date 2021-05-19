@@ -14,35 +14,37 @@
         <img src="../assets/log.jpeg" id="icon" alt="User Icon" />
         </div>
         <div class="formFooter">
+            <div class="alert alert-success" role="alert" *ngIf="success==='true'">
+                <h4> Tour creer avec success !!!</h4>
+              </div>
         <div class="col-md-12 user-container">
-            <form [formGroup]="addForm">
-                <div class="nom">
-                    <button class="btn btn-success" (click)="sortant()" style="font-size: 20px;">Tirage au sort</button>
-                    <span style="color: red; font-size: 20px;"> {{ gagnantPrenom }} {{ gagnantNom }} </span>
-                </div>
-                <div class="form-group">
-                    <!--<div class="form-row">-->
-                        <div class="nom">
-                            <label for="nom"><b>Libelle</b></label>
-                            <input type="text" class="form-control" placeholder="Le nom du tour" formControlName="nom" name="nom">
-                            <span style="color: red; font-size: 16px;"> {{ erreurNom }} </span>
-                        </div>
-                        <div class="tontine">
-                            <label for="tontine" ><b>Veiller selectionner un Tontine</b></label>
-                            <select name="tontine" style="border-radius: 20px; " id="tontine" class="form-control" formControlName="tontine">
-                                <option value="{{ listTontine.id }}"  *ngFor="let listTontine of listTontine">{{ listTontine.nom }} </option>
-                            </select>
-                            <span style="color: red; font-size: 16px;"> {{ erreurTontine }} </span>
-                        </div>
-                        <div class="date">
-                            <label for="date"><b>Choisi la date</b></label>
-                            <input type="date" class="form-control" formControlName="date" name="date">
-                        </div>
-                    <!--</div>-->
-                    <span style="color: red; font-size: 16px; margin-left: 50%;"> {{ erreurDate }} </span>
+            <div class="nom">
+                <button class="btn btn-success" (click)="sortant()" style="font-size: 20px;">Tirage au sort</button>
+                <span style="color: red; font-size: 20px;"> {{ gagnantPrenom }} {{ gagnantNom }} </span>
+            </div>
+            <form [formGroup]="addForm">  
+
+                <div class="col mb-4 mt-3">
+                    <label for="nom"><b>Libelle</b></label>
+                    <input type="text" class="form-control" placeholder="Le nom du tour" formControlName="nom" name="nom">
+                    <span style="color: red; font-size: 16px;"> {{ erreurNom }} </span>
                 </div>
 
-                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block" style="margin-top: -1.5%; width: 50%; margin-left: 27%;">Creer</button>
+                <div class="col mb-4">
+                    <label for="tontine" ><b>Veiller selectionner un Tontine</b></label> <br>
+                    <select name="tontine" formControlName="tontine">
+                        <option *ngFor="let listTontine of listTontine" value="{{ listTontine.id }}">{{ listTontine.nom }} </option>
+                    </select><br>
+                    <span style="color: red; font-size: 16px;"> {{ erreurTontine }} </span>
+                </div>
+
+                <div class="col">
+                    <label for="date"><b>Choisi la date</b></label>
+                    <input type="date" class="form-control" formControlName="date" name="date">
+                </div>
+                <span style="color: red; font-size: 16px;"> {{ erreurDate }} </span>
+
+                <input id="button" type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block" value="Créer">
               </form>
         </div>
     </div>

@@ -9,14 +9,14 @@
     <div class="wrapper fadeInDown">
     <div class="formContent">
         <h2 class="active">Formilaire d'ajout nouveau Membre </h2>
-        <a routerLink="/users"><i class="fa fa-list" aria-hidden="true"></i>Lister Les utilisateurs</a>
+        <a routerLink="/admin/users">Liste Membre <i class="fa fa-list" aria-hidden="true"></i></a>
         <div class="fadeIn first">
         <img src="https://aathifrupay.com/DesignFiles/img/loginpannel.png" id="icon" alt="User Icon" />
         </div>
         <div class="formFooter">
         <div class="col-md-12 user-container">
             <form [formGroup]="addForm"> 
-                <div class="form-group">
+                <div class="form-group mb-0">
                     <div class="form-row ml-5 ">
                         <div class="col">
                             <label for="prenom" > <b>Prenom</b></label>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <div class="form-row ml-5">
                         <div class="col">
                             <label for="telephone" ><b>Telephone</b></label>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <div class="form-row ml-5">
                         <div class="col">
                             <label for="Genre" ><b>Choisie le Genre</b></label>
@@ -59,15 +59,13 @@
                         <div class="col">
                             <label for="profil" ><b>Selectionner un Profil</b></label>
                             <select name="profil" style="border-radius: 10px; height: 45px; width: 90%;" id="profil" class="form-control" formControlName="profil">
-                                <option value="user">ADMINISTRATEUR</option>
-                                <option value="tresorier">TRESORIER</option>
-                                <option value="gerant">GERANT</option>
+                                <option *ngFor="let listProfil of listProfils" value="{{listProfil.id}}"> {{listProfil.libelle}}</option>
                             </select>
                             <span style="color: red; font-size: 16px;"> {{ messageProfil }} </span>
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <div class="form-row ml-5">
                         <div class="col">
                             <label for="avatar" ><b>Selectionner un avatar</b></label>
@@ -84,7 +82,7 @@
 
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <div class="form-row ml-5">
                         <div class="col">
                             <label for="cni" ><b>CNI</b></label>
@@ -103,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <div class="form-row ml-5">
                         <div class="col">
                             <label for="email" ><b>Email</b></label>

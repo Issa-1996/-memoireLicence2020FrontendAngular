@@ -18,7 +18,7 @@ export class EditUserComponent implements OnInit {
     let userId = window.localStorage.getItem("id");
     if(!userId) {
       alert("Invalid action.")
-      this.router.navigate(['/home']);
+      this.router.navigate(['/admin/home']);
       return;
     }
     this.addForm = this.formBuilder.group({
@@ -59,7 +59,7 @@ export class EditUserComponent implements OnInit {
     this.apiService.updateUser(formData)
       .subscribe( data => {
         console.log(data);
-        this.router.navigate(['/users']);
+        this.router.navigate(['/admin/users']);
       });    
   }
   onUploadAvatar=(event:any)=>{

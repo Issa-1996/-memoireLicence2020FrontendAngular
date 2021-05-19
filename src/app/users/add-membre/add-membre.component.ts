@@ -18,6 +18,7 @@ export class AddMembreComponent implements OnInit {
   addForm: FormGroup;
   listTontine: any;
   pageCurrent=1;
+  listProfils:any;
   public totalPage=1;
   avatar: any;
   public messagePrenom="";
@@ -36,6 +37,7 @@ export class AddMembreComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private apiService: MethodeService, private router: Router) { }
 
   ngOnInit() {
+    this.readProfil();
     this.Tontine(this.pageCurrent);
     this.addForm = this.formBuilder.group({
       prenom: ['', Validators.required],
@@ -205,7 +207,12 @@ export class AddMembreComponent implements OnInit {
       if (this.addForm.invalid){
         return;
       }
-      this.apiService.addUser(this.addForm.value)
+      const data: any=JSON.stringify(this.addForm.value);
+      delete data.avatar;
+      const formData=new FormData();
+      formData.append("user",data);
+      formData.append("avatar", this.avatar);
+      this.apiService.addUser(formData)
         .subscribe( data => {
           console.log(data);
           this.router.navigate(['/users']);
@@ -242,7 +249,16 @@ export class AddMembreComponent implements OnInit {
             console.log(error);
           });
     }
-
-
-
+    readProfil(){
+      return this.apiService.readAllProfil()
+        .subscribe(
+          data => {
+            this.listProfils = data;
+            this.listProfils = this.listProfils["hydra:member"];
+            console.log(this.listProfils);
+          },
+          error => {
+            console.log(error);
+          });
+    }
 }

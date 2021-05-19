@@ -25,6 +25,7 @@ import { EspaceMembreComponent } from './espace-membre/espace-membre.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { DetailUserComponent } from './detail-user/detail-user.component';
 import { AddTontineComponent } from './add-tontine/add-tontine.component';
+import { AppContainerComponent } from './app-container/app-container.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AddTontineComponent } from './add-tontine/add-tontine.component';
     EditUserComponent,
     DetailUserComponent,
     AddTontineComponent,
+    AppContainerComponent,
   ],
   imports: [
     BrowserModule,

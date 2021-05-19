@@ -11,19 +11,32 @@ import { Component, OnInit } from '@angular/core';
 export class AddProfilComponent implements OnInit {
 
   addForm: FormGroup;
+  error:any;
+  success="false";
   constructor(private formBuilder: FormBuilder, private apiService: MethodeService, private router: Router) { }
 
   ngOnInit(): void {
       this.addForm = this.formBuilder.group({
         libelle: ['', Validators.required]
       });
+      this.addForm.get('libelle').valueChanges.subscribe(
+        () => { this.error = ''; }
+      );
   }
   onSubmit() {
+    if (this.addForm.get('libelle').value.trim() === ''){
+      this.error = 'Libelle du profil obligatoire !';
+    }
+    if (this.addForm.invalid){
+      return;
+    }
     //console.log(this.addForm.value);
     this.apiService.addProfil(this.addForm.value)
       .subscribe( data => {
-        console.log(data);
-        //this.router.navigate(['/home/listUser']);
+        //console.log(data);
+        this.addForm.reset();
+        this.success="true";
+        //this.router.navigate(['/admin/home']);
       });
   }
 

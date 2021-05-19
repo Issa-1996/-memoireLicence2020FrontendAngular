@@ -19,6 +19,7 @@ export class TourComponent implements OnInit {
   gagnantPrenom:any;
   gagnantNom:any;
   erreurDate="";
+  success="false";
   constructor(private formBuilder: FormBuilder, private apiService: MethodeService, private router: Router) { }
 
   ngOnInit(): void {
@@ -29,9 +30,18 @@ export class TourComponent implements OnInit {
         date: ['', Validators.required],
         tontine:['', Validators.required]
       });
+      this.addForm.get('nom').valueChanges.subscribe(
+        () => { this.erreurNom = ''; }
+      );
+      this.addForm.get('date').valueChanges.subscribe(
+        () => { this.erreurDate = ''; }
+      );
+      this.addForm.get('tontine').valueChanges.subscribe(
+        () => { this.erreurTontine = ''; }
+      );
   }
   onSubmit() {
-    console.log(this.addForm.value.nom);
+    /*console.log(this.addForm.value.nom);
     if(this.addForm.value.nom==""){
       this.erreurNom="Le nom du Tour est obligatoire";
     }else{
@@ -52,7 +62,25 @@ export class TourComponent implements OnInit {
           });
         }
       }
+    }*/
+    if (this.addForm.get('nom').value.trim() === ''){
+      this.erreurNom = 'Le nom de la tour obligatoire !';
     }
+    if (this.addForm.get('tontine').value.trim() === ''){
+      this.erreurTontine = 'Veiller selectionner une tontine !';
+    }
+    if (this.addForm.get('date').value.trim() === ''){
+      this.erreurDate = 'Date du tour obligatoire !';
+    }
+    if (this.addForm.invalid){
+      return;
+    }
+    this.apiService.addTour(this.addForm.value)
+      .subscribe( data => {
+        this.success="true";
+        //console.log("success");
+        //this.router.navigate(['/home']);
+      });
    
   }
   Tontine(page:any) {

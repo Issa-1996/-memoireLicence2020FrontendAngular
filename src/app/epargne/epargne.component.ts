@@ -64,8 +64,9 @@ export class EpargneComponent implements OnInit {
             this.apiService.addEpargnes(this.addForm.value)
             .subscribe( data => {
               if(data){
-                console.log("succes");
-                this.router.navigate(["/home"])
+                //console.log("succes");
+                this.addForm.reset();
+                this.router.navigate(["/admin/home"])
               }
             });   
               }
@@ -96,7 +97,7 @@ export class EpargneComponent implements OnInit {
             }
           },
           error => {
-            console.log(error);
+            //console.log(error);
           });
     }
 
@@ -113,9 +114,6 @@ export class EpargneComponent implements OnInit {
     }
 
     onTour(comp) {
-      console.log(comp);
+      //console.log(comp);
     }
-
-
-
-}
+  }

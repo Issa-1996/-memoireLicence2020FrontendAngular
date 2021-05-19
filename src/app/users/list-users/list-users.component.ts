@@ -29,7 +29,7 @@ export class ListUsersComponent implements OnInit {
     localStorage.removeItem("editUserId");
     localStorage.setItem("id", user.id.toString());
     //console.log(user.id.toString());
-    this.router.navigate(['/users/editUser']);
+    this.router.navigate(['/admin/users/editUser']);
   }
   deleteUser(user: User): void {
     localStorage.removeItem("editUserId");
@@ -38,7 +38,7 @@ export class ListUsersComponent implements OnInit {
     this.apiService.deleteUserId(user.id.toString())
       .subscribe( data => {
         //console.log("succes");
-        this.router.navigate(['/home']);
+        this.router.navigate(['/admin/home']);
       }); 
   }
 }

@@ -15,6 +15,7 @@ export class AddTontineComponent implements OnInit {
   errorSession="";
   errordate1="";
   errordate2="";
+  success="false";
   constructor(private formBuilder: FormBuilder, private apiService: MethodeService, private router: Router) { }
 
   ngOnInit(): void {
@@ -24,10 +25,49 @@ export class AddTontineComponent implements OnInit {
       dateCre: ['', Validators.required],
       datef: ['', Validators.required]
     });
+    this.addForm.get('nom').valueChanges.subscribe(
+      () => { this.errorNom = ''; }
+    );
+    this.addForm.get('session').valueChanges.subscribe(
+      () => { this.errorSession = ''; }
+    );
+    this.addForm.get('dateCre').valueChanges.subscribe(
+      () => { this.errordate1 = '';  }
+    );
+    this.addForm.get('datef').valueChanges.subscribe(
+      () => { this.errordate2 = ''; }
+    );
   }
 
   onSubmit() {    
-    if(this.addForm.value.nom===""){
+
+    if (this.addForm.get('nom').value.trim() === ''){
+      this.errorNom = 'Nom de la tontine obligatoire !';
+    }
+    if (this.addForm.get('session').value.trim() === ''){
+      this.errorSession = 'La nom de la session obligatoire !';
+    }
+    if (this.addForm.get('dateCre').value.trim() === ''){
+      this.errordate1 = 'La date de debut obligatoire !';
+    }
+    if (this.addForm.get('datef').value.trim() === ''){
+      this.errordate2 = 'Date de fin obligatoire !';
+    }
+    if (this.addForm.invalid){
+      return;
+    }
+    this.apiService.addTontine(this.addForm.value)
+      .subscribe( data => {
+        if(data){
+          this.success="true";
+          this.addForm.reset();
+          //console.log("suuves");
+          //this.router.navigate(["/admin/home"])
+        }
+      });  
+
+
+   /* if(this.addForm.value.nom===""){
       this.errorNom="Nom de la Tontine Obligatoire";
     }else{
       this.errorNom="";
@@ -54,6 +94,6 @@ export class AddTontineComponent implements OnInit {
         }
       }
     }
-  }
+  }*/
 }
 }

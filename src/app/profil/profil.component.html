@@ -1,47 +1,52 @@
 
-    <div class="row col-md-8 ml-3 mt-5">
-        <h1 style="margin-left: 33%;">Liste des Profil</h1>
-        <a routerLink="/addProfil"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        <table class="table table-hover">
+    <div class="container mt-5" style="box-shadow: 0 0 10px 10px lightslategrey; ">
+
+        <div class="row col-md-12 ml-0" style="background-color:blue; text-align: center; color: white;">
+            <h3 style="margin-left: 40%;">Liste des Profil</h3>
+            <a routerLink="/admin/addProfil" style="margin-left: 30%; color: white; margin-top: 3%; font-size: 20px; text-decoration: none;">Nouveau<i class="fas fa-id-card"></i></a>
+        </div>
+        <table class="table table-hover col-md-9" style="text-align: center;">
             <thead>
-            <tr class="table-primary">
-                <th scope="col">ID</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th class="mr-5"  scope="col">Libelle</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th scope="col">Action</th>
-            </tr>
+                <tr class="bg-primary">
+                    <th scope="col" style="text-align: center;">ID</th>
+                    <th></th>
+                    <th></th>
+                    <th scope="col" style="text-align: center;">Libelle</th>
+                    <th></th>
+                    <th></th>
+                    <th scope="col" style="text-align: center;">Action</th>
+                </tr>
             </thead>
             <tbody *ngFor="let listProfil of listProfils">
-            <tr class="table-active">
-                <td>{{ listProfil.id }}</td>
-                <th></th>
-                <th></th>
-                <th></th>
-                <td>{{ listProfil.libelle }}</td>
-                <th></th>
-                <th></th>
-                <th></th>
-                <td><button class="btn btn-danger" (click)="editProfil(listProfil)" style="margin-left: 20px;">Supprimer</button><button class="btn btn-success" (click)="editProfil(listProfil)" style="margin-left: 20px;">modifier</button></td>
-            </tr>
-            <tr class="table-secondary">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+                <tr class="table">
+                    <td>{{ listProfil.id }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ listProfil.libelle }}</td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-danger"  (click)="openModal(true)" style="margin-left: 0px;">Supprimer</button><button class="btn btn-success" (click)="editProfil(listProfil)" style="margin-left: 0px;">modifier</button></td>
+                </tr>
+                <!-- Modal -->
+                  <div class="modal fade" id="mdlSample" role="dialog" [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 0.5}">
+                    <div class="modal-dialog" role="document" id="conf">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title" id="exampleModalLabel">Confirmation de suppression</h3>
+                        </div>
+                        <div class="modal-body">
+                          Souhaitez-vous vraiment Supprimer ce profil ?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" (click)="openModal(false)" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                          <button type="button" (click)="openModal(false)" class="btn btn-primary" (click)="deleteProfil(listProfil)">Confirmer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </tbody>
-           <!-- <button class="btn pagination" (click)="readProfils(pageCurrent - 1)" [disabled]="(pageCurrent==1)">Precedent</button>
-            <button class="btn pagination" (click)="readProfils(pageCurrent + 1)" [disabled]="(pageCurrent==totalPage)">Suivant</button>-->    
-        </table>
-    </div>
-<router-outlet></router-outlet>
+            <!-- <button class="btn pagination" (click)="readProfils(pageCurrent - 1)" [disabled]="(pageCurrent==1)">Precedent</button>
+                <button class="btn pagination" (click)="readProfils(pageCurrent + 1)" [disabled]="(pageCurrent==totalPage)">Suivant</button>-->    
+            </table>
+            <router-outlet></router-outlet>
+        </div>

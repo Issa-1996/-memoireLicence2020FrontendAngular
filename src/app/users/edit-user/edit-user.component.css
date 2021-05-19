@@ -28,10 +28,7 @@ h2 {
 .wrapper {
   display: flex;
   align-items: center;
-  
-  
   width: 100%;
-  
 }
 #icon{
     width: 10%;
@@ -42,13 +39,11 @@ h2 {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
-  
   width: 28%;
-  
+  height: 81%;
   position: absolute;
   left:70%;
-  top: 1%;
-  
+  top: 15%;
   -webkit-box-shadow: 60px 30px 60px 60px rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
@@ -72,4 +67,20 @@ h2.inactive {
 h2.active {
   color: #0d0d0d;
   border-bottom: 2px solid #5fbae9;
+}
+input{
+  border-color: #56baed;
+  height: 90%;
+  border-radius: 10px;
+  font-size: 16px;
+}
+select{
+  border-color: #56baed;
+}
+button{
+  background-color: royalblue;
+  width: 90%;
+  height: 50px;
+  margin-top: 8%;
+  font-size: 20px;
 }

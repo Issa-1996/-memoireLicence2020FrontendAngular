@@ -9,24 +9,28 @@
     <div class="wrapper fadeInDown">
     <div class="formContent">
         <h2 class="active">Creation d'un profil</h2>
-        <a routerLink="/profil"><i class="fa fa-list" aria-hidden="true"></i>Lister Les Profils</a>
+        <a routerLink="/admin/profil"><i class="fa fa-list" aria-hidden="true"></i>Lister Les Profils</a>
         <div class="fadeIn first">
         <img src="https://aathifrupay.com/DesignFiles/img/loginpannel.png" id="icon" alt="User Icon" />
         </div>
+        <div class="alert alert-success" role="alert" *ngIf="success==='true'">
+            <h4> Creation profl avec success !!!</h4>
+          </div>
         <div class="formFooter">
         <div class="col-md-12 user-container">
-            <form>
+            <form [formGroup]="addForm">
                     
-                <div class="form-group">
-                    <!--<div class="form-row">-->
-                        <div class="col">
+                <!--<div class="form-group mt-5">
+                    <div class="form-row">-->
+                        <div class="col mt-5">
                             <label for="libelle">Libelle</label>
                             <input type="text" class="form-control" placeholder="libelle" formControlName="libelle" name="libelle">
+                            <h6 style="color: red; font-size:16px">{{error}}</h6>
                         </div>
-                    <!--</div>-->
-                </div>
+                    <!--</div>
+                </div>-->
 
-                <button type="button" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+                <button type="button" (click)="onSubmit()" class="btn btn-primary">Enregistrer</button>
               </form>
         </div>
     </div>
