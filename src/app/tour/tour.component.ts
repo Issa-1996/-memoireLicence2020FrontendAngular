@@ -20,6 +20,8 @@ export class TourComponent implements OnInit {
   gagnantNom:any;
   erreurDate="";
   success="false";
+  affice=false;
+  cache=true;
   constructor(private formBuilder: FormBuilder, private apiService: MethodeService, private router: Router) { }
 
   ngOnInit(): void {
@@ -78,6 +80,7 @@ export class TourComponent implements OnInit {
     this.apiService.addTour(this.addForm.value)
       .subscribe( data => {
         this.success="true";
+        this.addForm.reset();
         //console.log("success");
         //this.router.navigate(['/home']);
       });
@@ -103,13 +106,18 @@ export class TourComponent implements OnInit {
           });
     }
     sortant(){
+     // this.cache=true;
       this.apiService.tirage()
       .subscribe(
         data=>{
           //console.log(data);
-          this.gagnantPrenom="Le beneficier est: "+data["prenom"];
+          this.gagnantPrenom=" "+data["prenom"];
           this.gagnantNom=data["nom"];
         }
       )
+    }
+    alert(){
+      //alert("fhgjkjlk")
+      this.affice=true;
     }
 }

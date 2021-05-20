@@ -17,19 +17,17 @@
           <li class="nav-item dropdown" routerActive="active">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" *ngIf="isProfil=='false'"><b>Parametre</b></a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink="/admin/profil">Profil</a>
-              <a class="dropdown-item" routerLink="/admin/tour">Tour</a>
-              <a class="dropdown-item" routerLink="/admin/users">Espace Membres</a>
-              <a class="dropdown-item" routerLink="/admin/tontine">Tontine</a>
-              <a class="dropdown-item" routerLink="/admin/mesEpargnes">Epargnes</a>
+              <a class="dropdown-item" routerLink="/admin/tour">Gestion des Tours</a>
+              <a class="dropdown-item" routerLink="/admin/tontine" *ngIf="role==='ROLE_ADMIN' || role==='ROLE_GERANT'">Creation d'une Tontine</a>
+              <a class="dropdown-item" routerLink="/admin/epargne">Gestion des Epargnes</a>
             </div>
           </li>
           <!--<li class="nav-item" routerActive="active"><a class="nav-link" routerLink="users">Users</a></li>-->
     
-          <li class="nav-item dropdown" routerActive="active">
+          <li class="nav-item dropdown" routerActive="active" *ngIf="role==='ROLE_ADMIN' || role==='ROLE_GERANT'">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Users</b></a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink="/admin/users">Utilisateurs</a>
+              <a class="dropdown-item" routerLink="/admin/users">Membre</a>
               <a class="dropdown-item" routerLink="/admin/profil">Profil</a>
             </div>
           </li>

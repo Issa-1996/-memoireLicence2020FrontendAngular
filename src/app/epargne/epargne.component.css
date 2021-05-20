@@ -42,7 +42,7 @@ h2 {
   border-radius: 10px 10px 10px 10px;
   background: #fff; 
   width: 40%;
-  height: 720px;
+  height: 750px;
   margin-left: 3%;
   margin-top: 0%;
   -webkit-box-shadow: 60px 30px 60px 60px rgba(0,0,0,0.3);
@@ -61,7 +61,7 @@ h2 {
 .tontine{
   width: 80%;
   margin-left: 10%;
-  margin-top: 8%;
+  margin-top: 7%;
 }
 .tontine select{
   border-radius: 10px;
@@ -72,6 +72,7 @@ h2 {
 .tour{
   width: 80%;
   margin-left: 10%;
+  margin-top: -1%;
   
 }
 .tour select{
@@ -83,6 +84,7 @@ h2 {
 .user{
   width: 80%;
   margin-left: 10%;
+  margin-top: -1%;
 }
 .user select{
   border-radius: 10px;
@@ -93,6 +95,7 @@ h2 {
 .montant{
   width: 80%;
   margin-left: 10%;
+  margin-top: -1%;
   
 }
 .montant input{
@@ -102,9 +105,10 @@ h2 {
   border-color: deepskyblue;
 }
 .interet{
-  width: 20%;
-  margin-left: 10%;
+  width: 60%;
+  margin-left: -5%;
   font-size: 16px;
+  margin-top: -1%;
 }
 
 /* TABS */

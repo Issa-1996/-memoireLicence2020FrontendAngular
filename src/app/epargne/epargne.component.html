@@ -13,52 +13,55 @@
         <div class="fadeIn first">
         <img src="https://aathifrupay.com/DesignFiles/img/loginpannel.png" id="icon" alt="User Icon" />
         </div>
+        <div class="alert alert-success" role="alert" *ngIf="success==='true'">
+            <h4> Epargne Enregistrer avec success !!!</h4>
+          </div>
         <div class="formFooter">
         <div class="col-md-12 user-container">
             <form [formGroup]="addForm">
                     
                 
                     <!--<div class="form-row">-->
-                        <div class="tontine">
-                            <label for="tontine"><b>Tontine</b></label>
-                            <select name="tontine" id="tontine" class="form-control" formControlName="tontine" [(ngModel)]="tontine" (ngModelChange)="onTontine($event)">
-                                <option value="{{ listTontine.id }}"  *ngFor="let listTontine of listTontine">{{ listTontine.nom }} </option>
-                            </select>
-                            <h6 style="color: red; font-size:16px">{{erroTontine}}</h6>
-                        </div>
+                <div class="tontine">
+                    <label for="tontine"><b>Tontine</b></label>
+                    <select name="tontine" id="tontine" class="form-control" formControlName="tontine"  (ngModelChange)="onTontine($event)">
+                        <option value="{{ listTontine.id }}"  *ngFor="let listTontine of listTontine">{{ listTontine.nom }} </option>
+                    </select>
+                    <h6 style="color: red; font-size:16px">{{erroTontine}}</h6>
+                </div>
 
-                        <div class="tour">
-                            <label for="tour"><b>Tour</b></label>
-                            <select name="tour" id="tour" class="form-control" formControlName="tour">
-                                <option value="{{ ListTourTontine.id }}"  *ngFor="let ListTourTontine of ListTourTontines">{{ ListTourTontine.nom }} </option>
-                            </select>
-                            <h6 style="color: red; font-size:16px"> {{   errorTour }} </h6>
-                        </div>
+                <div class="tour">
+                    <label for="tour"><b>Tour</b></label>
+                    <select name="tour" id="tour" class="form-control" formControlName="tour">
+                        <option value="{{ ListTourTontine.id }}"  *ngFor="let ListTourTontine of ListTourTontines">{{ ListTourTontine.nom }} </option>
+                    </select>
+                    <h6 style="color: red; font-size:16px"> {{   errorTour }} </h6>
+                </div>
 
-                        <div class="user">
-                            <label for="user"><b>Membre</b></label>
-                            <select name="user" id="user" class="form-control" formControlName="user">
-                                <option value="{{ userTontine.id }}"  *ngFor="let userTontine of userTontines">{{ userTontine.prenom }} </option>
-                            </select>
-                            <h6 style="color: red; font-size:16px"> {{   errorUser }} </h6>
-                        </div>
+                <div class="user">
+                    <label for="user"><b>Membre</b></label>
+                    <select name="user" id="user" class="form-control" formControlName="user">
+                        <option value="{{ userTontine.id }}"  *ngFor="let userTontine of userTontines">{{ userTontine.prenom }} </option>
+                    </select>
+                    <h6 style="color: red; font-size:16px"> {{   errorUser }} </h6>
+                </div>
 
 
-                        <div class="montant">
-                            <label for="montant"><b>Montant</b></label>
-                            <input type="number" class="form-control" placeholder="montant" formControlName="montant" name="montant">
-                            
-                        </div>
-                        <h6 style="color: red; font-size:16px; margin-top: 3%;margin-left: 40%;"> {{ errorMontant }} </h6>
+                <div class="montant">
+                    <label for="montant"><b>Montant</b></label>
+                    <input type="number" class="form-control" placeholder="montant" formControlName="montant" name="montant">
+                    <h6 style="color: red; font-size:16px;"> {{ errorMontant }} </h6>
+                </div>
+                        
                    <!--</div>-->
                
                 <div class="interet">
-                    <input type="radio" name="interet" value="avecinteret"  formControlName="interet"> Avec Interet <br>
-                    <input type="radio" name="interet" value="sansinteret" formControlName="interet" checked> Sans interet
+                    Avec Interet<input type="radio" name="interet" value="avecinteret"  formControlName="interet"> Sans interet
+                    <input type="radio" name="interet" value="sansinteret" formControlName="interet" checked> 
+                    <h6 style="color: red; font-size:16px"> {{   errorInteret }} </h6>
                 </div>
-                <h6 style="color: red; font-size:16px"> {{   errorInteret }} </h6>
-
-                <button type="button" (click)="onSubmit()" class="btn btn-primary">Envoyer</button>
+                
+                <button (click)="onSubmit()" class="btn btn-primary">Envoyer</button>
               </form>
         </div>
     </div>

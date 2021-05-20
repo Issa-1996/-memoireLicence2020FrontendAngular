@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   nom:any;
   profil:any;
   avatar:any;
+  role:any;
   public isProfil="" ;
   public isLoggedIn="false";
   constructor(private accessService: AuthService, private router: Router, private authService:AuthService) { 
@@ -46,7 +47,8 @@ export class HeaderComponent implements OnInit {
       this.avatar=data["avatar"];
       this.prenom=data["prenom"];
       this.nom=data["nom"];
-      //console.log(data);
+      this.role=data["roles"]["0"];
+      
       
      // this.profil=data["profil"]["libelle"];
       if(data["profil"]["libelle"]==="membre"){

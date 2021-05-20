@@ -6,10 +6,32 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalCenterTitle" style="color: red; margin-left: 10%;">Information du Tirage !!!</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">Le sortant du tirage est: <b> {{ gagnantPrenom }} {{ gagnantNom }}</b></h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="alert()" class="btn btn-secondary" data-dismiss="modal" style="margin-right: 40%; background-color: royalblue; width: 20%;">OK</button>
+              <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="alert alert-primary" role="alert" *ngIf="affice===true"  style="width: 20%; text-align: center; height: 70px; margin-left: 42%; margin-top: -0.8%; box-shadow: 0 0 20px 0 green;">
+        <h4>Le sortant du tirage est: <b> {{ gagnantPrenom }} {{ gagnantNom }}</b></h4>
+      </div>
     <div class="wrapper fadeInDown">
     <div class="formContent">
         <h2 class="active">Creation d'un Tour</h2>
-        <a routerLink="/profil"><i class="fa fa-list" aria-hidden="true"></i>Lister Les Tours</a>
+        <!--<a routerLink="/profil"><i class="fa fa-list" aria-hidden="true"></i>Lister Les Tours</a>-->
         <div class="fadeIn first">
         <img src="../assets/log.jpeg" id="icon" alt="User Icon" />
         </div>
@@ -18,9 +40,9 @@
                 <h4> Tour creer avec success !!!</h4>
               </div>
         <div class="col-md-12 user-container">
-            <div class="nom">
-                <button class="btn btn-success" (click)="sortant()" style="font-size: 20px;">Tirage au sort</button>
-                <span style="color: red; font-size: 20px;"> {{ gagnantPrenom }} {{ gagnantNom }} </span>
+            <div class="nom" >
+                <button class="btn alert-primary" *ngIf="affice===false" (click)="sortant()" style="font-size: 20px;"  data-toggle="modal" data-target="#exampleModalCenter">Tirage au sort</button>
+                <!--<span style="color: red; font-size: 20px;"> {{ gagnantPrenom }} {{ gagnantNom }} </span>-->
             </div>
             <form [formGroup]="addForm">  
 

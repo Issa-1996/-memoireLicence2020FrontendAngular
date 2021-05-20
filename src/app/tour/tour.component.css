@@ -42,11 +42,11 @@ h2 {
   border-radius:20px;
   background: #fff;
   height: 600px;
-  width: 50%;
+  width: 40%;
   height: 680px;
   position: absolute;
-  margin-left: 3%;
-  top: 15%;
+  margin-left: 1%;
+  top: 23%;
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
 }
